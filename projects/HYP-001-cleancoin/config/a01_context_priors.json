@@ -1,0 +1,61 @@
+{
+  "status": "CONTEXT_PRIORS_ONLY",
+  "stage_gate_evidence": false,
+  "notes": "These values constrain search space and research order. They are not a calibrated CleanCoin formulation or lifetime model.",
+  "priors": {
+    "water_diffusivity_m2_s": {
+      "value": 2.256e-9,
+      "kind": "point_context_measurement",
+      "temperature_C": 37,
+      "source_doi": "10.1002/jsfa.13131",
+      "transfer_warning": "Measured in a calcium-alginate diffusion-cell system; not yet formulation- or room-temperature-specific to A01."
+    },
+    "mobile_ca_diffusivity_m2_s": {
+      "range": [7.8e-10, 1.0e-9],
+      "kind": "order_of_magnitude_transport_prior",
+      "sources": [
+        "Thu et al. 2000 Biopolymers calcium-alginate gelation model",
+        "competitive-ligand calcium-alginate reaction-diffusion literature"
+      ],
+      "transfer_warning": "Primarily inward gelation/exchange contexts; outward de-crosslinking may differ through binding, pore evolution, ionic composition and geometry."
+    },
+    "guluronate_fraction_A1112": {
+      "range": [0.30, 0.40],
+      "kind": "manufacturer_historical_product_prior",
+      "source": "Sigma-Aldrich A1112 technical information",
+      "transfer_warning": "Not tested lot-by-lot; do not treat as the exact Tavakoli material composition."
+    },
+    "guluronate_concentration_mol_m3_at_4pct": {
+      "range": [60.6, 80.8],
+      "kind": "derived_order_of_magnitude_prior",
+      "assumptions": [
+        "4% w/w aqueous alginate approximated as 40 g/L",
+        "sodium uronate repeat-unit molar mass approximated as 198.1 g/mol",
+        "A1112 G fraction 0.30-0.40"
+      ]
+    },
+    "ca_gelation_stoichiometric_scale_mol_m3": {
+      "range": [15.1, 80.8],
+      "kind": "derived_feed_equivalent_prior",
+      "ca_to_g_reference_ratios": [0.25, 0.55, 1.0],
+      "sources": ["10.1021/jp0689870", "10.1016/j.carbpol.2022.119788"],
+      "transfer_warning": "Feed-equivalent Ca/G is not identical to total bound Ca or mechanically load-bearing junction Ca."
+    },
+    "temporary_ca_mol_m3": {
+      "value": null,
+      "status": "UNRESOLVED"
+    },
+    "strong_ca_mol_m3": {
+      "value": null,
+      "status": "UNRESOLVED"
+    },
+    "temporary_dissociation_rate_s": {
+      "value": null,
+      "status": "UNRESOLVED"
+    },
+    "strong_dissociation_rate_s": {
+      "value": null,
+      "status": "UNRESOLVED"
+    }
+  }
+}
