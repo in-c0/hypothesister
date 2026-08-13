@@ -8,6 +8,7 @@ PAIR_PARAMS = {
     "XX": {"r_min_nm": 0.70, "epsilon_kJ_mol": 1.0, "attractive": False},
 }
 CUTOFF_NM = 1.50
+GRADIENT_CAP_KJ_MOL_NM = 500.0
 
 
 def sigma_from_minimum_nm(r_min_nm: float) -> float:
@@ -22,6 +23,16 @@ def raw_lj_kj_mol(r_nm: float, r_min_nm: float, epsilon_kJ_mol: float) -> float:
     sigma = sigma_from_minimum_nm(r_min_nm)
     x = sigma / r_nm
     return 4.0 * epsilon_kJ_mol * (x**12 - x**6)
+
+
+def raw_lj_radial_gradient_kj_mol_nm(r_nm: float, r_min_nm: float, epsilon_kJ_mol: float) -> float:
+    """Return dU/dr, capped at the source gradient limit."""
+    if r_nm <= 0 or r_min_nm <= 0 or epsilon_kJ_mol < 0:
+        raise ValueError("invalid Lennard-Jones inputs")
+    sigma = sigma_from_minimum_nm(r_min_nm)
+    x6 = (sigma / r_nm) ** 6
+    grad = 24.0 * epsilon_kJ_mol / r_nm * (x6 - 2.0 * x6 * x6)
+    return max(-GRADIENT_CAP_KJ_MOL_NM, min(GRADIENT_CAP_KJ_MOL_NM, grad))
 
 
 def shifted_attractive_lj_kj_mol(
