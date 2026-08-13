@@ -1,0 +1,18 @@
+{
+  "status": "PROVISIONAL_TARGETS_NOT_EVIDENCE",
+  "activation": {
+    "hydration_50pct_max_s": 10.0
+  },
+  "working_window": {
+    "start_s": 60.0,
+    "end_s": 1200.0,
+    "min_normalized_cohesion": 0.70
+  },
+  "post_use": {
+    "time_s": 2400.0,
+    "max_normalized_cohesion": 0.20
+  },
+  "robustness": {
+    "min_fraction_of_perturbations_passing": 0.80
+  }
+}
