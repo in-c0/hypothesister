@@ -1,0 +1,29 @@
+{
+  "source_doi": "10.1021/acs.jcim.1c01076",
+  "case": 4,
+  "model": "IM1",
+  "box_nm": 500.0,
+  "periodic": true,
+  "polymer_wt_pct": 0.5,
+  "composition": "high_G",
+  "molecular_weight_kDa": 200,
+  "dimers_per_chain": 571,
+  "crosslink_degree_f": 0.5,
+  "annealing": "none",
+  "simulation_time_us": 10.0,
+  "time_step_s": 1e-13,
+  "temperature_K": 300.0,
+  "water_viscosity_Pa_s": 8.54e-4,
+  "dimer_mass_Da": 350.0,
+  "stokes_radius_nm": 0.35,
+  "contact_cutoff_nm": 1.5,
+  "coordination_contact_nm": 0.9,
+  "expected": {
+    "G_fraction": 0.630,
+    "M_fraction": 0.370,
+    "mean_coordination_final": 1.3,
+    "fraction_dimers_coordination_ge_1_final": 0.46,
+    "mean_GG_attractive_contacts_per_GG_final": 2.74,
+    "critical_f_rough": [0.17, 0.20]
+  }
+}
