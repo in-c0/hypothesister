@@ -15,3 +15,10 @@ strong_activation_bound_fraction,B_crit,,,UNSET,,Connectivity/weakening threshol
 strong_activation_width,w_B,,,UNSET,,Smoothness of strong-junction activation; reduced-model parameter pending mechanistic justification
 bath_volume,V_bath,,,SOURCE_SPECIFIC,,Needed to convert released Ca2+ moles to external concentration; must match each calibration experiment
 characteristic_thickness,L,,,SOURCE_SPECIFIC,,Diffusion length/geometry; high sensitivity and must match each calibration experiment
+effective_crosslink_density_3p8pct_highG,rho_x_ref,6.40,mol/m3,CONTEXT_MECHANICAL_PRIOR,10.3390/molecules14083003,"3.8% high-G alginate; 50 mM CaCl2 + 0.4 M NaCl for 3 days; no post-crosslink swelling/shrinkage; not direct A01 calibration"
+young_modulus_3p8pct_highG,E_ref,47587,Pa,CONTEXT_MECHANICAL_PRIOR,10.3390/molecules14083003,"10% stress-relaxation-derived Young modulus at 25 C; source-matched only to Grassi reference gel"
+mesh_size_3p8pct_highG,xi_ref,7.9,nm,CONTEXT_MECHANICAL_PRIOR,10.3390/molecules14083003,"Equivalent-network mesh size from effective crosslink density; high-G homogeneous reference"
+relaxation_time_3p8pct_highG,lambda1_ref,20.1,s,CONTEXT_VISCOELASTIC_PRIOR,10.3390/molecules14083003,"First generalized-Maxwell relaxation time at 3.8% high-G alginate; context prior only"
+ion_exchange_modulus_loss_15h_compressive,,63,percent,CONTEXT_WEAKENING_PRIOR,"10.1002/(SICI)1097-4636(199910)47:1<46::AID-JBM6>3.0.CO;2-N","Ca-alginate after 15 h physiological NaCl exposure vs control; exact time law and formulation need extraction"
+ion_exchange_modulus_loss_15h_equilibrium_shear,,84,percent,CONTEXT_WEAKENING_PRIOR,"10.1002/(SICI)1097-4636(199910)47:1<46::AID-JBM6>3.0.CO;2-N","Ca-alginate after 15 h physiological NaCl exposure vs control"
+ion_exchange_modulus_loss_15h_dynamic_shear,,90,percent,CONTEXT_WEAKENING_PRIOR,"10.1002/(SICI)1097-4636(199910)47:1<46::AID-JBM6>3.0.CO;2-N","Ca-alginate after 15 h physiological NaCl exposure vs control"
