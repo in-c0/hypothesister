@@ -1,0 +1,3 @@
+observation_id,source_doi,sample,initial_crosslink,exchange_bath,interior_diffusivity_m2_s,exterior_diffusivity_m2_s,observation,status,transfer_warning
+MA2025-1Ca5Mg,10.1021/cbe.5c00017,IX-1Ca5Mg,"1 wt% CaCl2; 5 min","5 wt% MgCl2",1.76e-11,1.14e-10,"crosslink degree decreased with exchange time and reached a plateau after about 10 min",CONTEXT_DECROSSLINK_PRIOR,"5 wt% alginate microgel; particle geometry/source boundary conditions differ from CleanCoin"
+MA2025-5Ca5Mg,10.1021/cbe.5c00017,IX-5Ca5Mg,"5 wt% CaCl2; 5 min","5 wt% MgCl2",1.69e-11,1.11e-10,"crosslink degree decreased with exchange time and reached a plateau after about 10 min",CONTEXT_DECROSSLINK_PRIOR,"5 wt% alginate microgel; Mg exchange chemistry and particle geometry differ from CleanCoin"
