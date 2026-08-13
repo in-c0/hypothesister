@@ -41,6 +41,32 @@ It still omits finite-bath boundary conditions, ion rebinding/competitive exchan
 
 A v0.1 sensitivity ranking may determine **which parameters to research next**, but its predicted lifetime or bath concentration MUST NOT be reported as evidence for HYP-001 until influential parameters are source-calibrated.
 
+### `cleancoin_lab.prepare_use_model` — A01 v0.2 preparation-history model
+
+Model-structure test motivated by Tavakoli 2019 and Patel 2017. It treats ionotropic gelation as a first simulation stage and the calcium-free rinse/use environment as a second stage. Calcium ingress creates a spatial distribution of free, temporary and coarse-grained persistent junction states; switching the boundary to a sink then produces preparation-history-dependent calcium egress.
+
+The temporary-to-strong `maturation` state is explicitly a reduced-order proxy for preparation-induced network topology. It is **not** a claim that calcium alginate literally follows a two-state chemical mechanism.
+
+v0.2 is allowed to answer questions such as:
+
+- Can preparation history in principle change normalized release shape without assigning a different arbitrary use-stage rate to each sample?
+- Which preparation-state variables are structurally identifiable from the 1-min versus 5-min source curves?
+- Which missing measurements most reduce uncertainty?
+
+v0.2 is not allowed to claim:
+
+- a CleanCoin lifetime;
+- a validated temporary/strong junction fraction;
+- a physical maturation rate;
+- mechanical performance or disintegration;
+- a stage-gate pass.
+
+A future calibrated version must replace or constrain the coarse-grained maturation law with source-backed preparation-state data and add swelling/mechanics before HYP-001 feasibility is evaluated.
+
+## Reproducibility
+
+All model changes should be covered by automated tests. GitHub Actions runs the repository test suite on pushes to `main` and pull requests. A passing software test means the implementation satisfies its coded invariants; it does **not** validate the physical model.
+
 ## Inference prohibition
 
-Neither the v0 workflow model nor the uncalibrated A01 v0.1 model may generate a stage-gate pass. A positive HYP-001 signal must come from source-calibrated physics with propagated uncertainty and robustness to nearby parameter/geometry perturbations.
+None of the v0, v0.1 or uncalibrated v0.2 models may generate a stage-gate pass. A positive HYP-001 signal must come from source-calibrated physics with propagated uncertainty and robustness to nearby parameter/geometry perturbations.
