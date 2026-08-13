@@ -1,23 +1,20 @@
 # RQ-002B — Observable state closure
 
-v0.3's `expansion_proxy` is replaced for feed-forward analysis by source-backed alginate closures:
+The anonymous v0.3 expansion proxy has been replaced by alginate-specific observable closures.
 
-- swelling: Davidovich-Pinhas & Bianco-Peled (2010), DOI `10.1016/j.carbpol.2009.10.036` (`Q=A[Ca]^n`, second-order kinetics);
-- mechanics: Liu et al. (2016), DOI `10.1016/j.carbpol.2015.08.086` (`G_e=k epsilon^1.5`).
+Swelling uses Davidovich-Pinhas & Bianco-Peled (2010), DOI `10.1016/j.carbpol.2009.10.036`: empirical `Q=A[Ca]^n` plus second-order swelling kinetics.
 
-The remaining explicit assumption is `bound junction fraction -> source-equivalent calcium`; this is a calibration variable, not a chemical identity.
+Mechanics uses Liu et al. (2016), DOI `10.1016/j.carbpol.2015.08.086`: `G_e=k*epsilon^1.5` above the gel point. Yuguchi et al. (2000), DOI `10.1016/S0022-2860(00)00556-1`, show that local chain association precedes formation of a continuous elastic network, so mechanics now has its own explicit connectivity threshold rather than sharing the swelling calcium axis.
 
-## 5,000-sample exploratory screen
+## Corrected robustness screen
 
-Using the existing 60 s vs 300 s preparation trajectories, 60 s rinse, and a 30 min horizon, the screen varied calcium floor/ceiling, junction-to-calcium exponent, swelling rate, and gel-point location over broad ranges.
+A 5,000-sample screen compared existing 60 s and 300 s preparation trajectories after a 60 s rinse at a 30 min horizon. It varied the swelling-state mapping, swelling rate, mechanical connectivity threshold, and connectivity scale.
 
-At 30 min:
+Results:
+- 100%: longer preparation was less swollen;
+- 100%: longer preparation was mechanically stronger;
+- median swelling-ratio separation: ~0.53; central 90% ~0.25–1.04;
+- ~69.7%: short preparation fell below the sampled connectivity threshold while long preparation remained connected;
+- where both remained connected, median modulus ratio was ~32.5. The very wide upper tail means near-threshold modulus ratios are not quantitative predictions.
 
-- 100% of samples had `Q_300s-prep < Q_60s-prep`;
-- 100% had `G_300s-prep > G_60s-prep`;
-- median swelling-ratio separation was about `0.53` (central 90% about `0.25–1.04`);
-- median modulus ratio `G_300s/G_60s` was about `5.0` (central 90% about `2.2–22.2`).
-
-This is a **model-structure signal only**. Absolute Q, modulus, lifetime, cyclic survival, and the junction-to-calcium mapping remain unvalidated.
-
-Next target: bound the junction/network state -> effective gelling-calcium or rheologically effective crosslink-density relation from simultaneous structural+rheological primary data before escalating to higher-fidelity simulation.
+This is a model-structure signal only. The priority unknown is now the mapping from local calcium-mediated junction/bundle state to sample-spanning connectivity.
