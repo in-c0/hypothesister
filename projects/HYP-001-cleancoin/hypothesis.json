@@ -1,0 +1,16 @@
+{
+  "id": "HYP-001",
+  "statement": "A predominantly bio-derived porous composite can be designed to hydrate rapidly, retain useful wet mechanical cohesion for a bounded cleaning interval, and subsequently undergo accelerated loss of cohesion.",
+  "status": "testing",
+  "success_criteria": [
+    "A literature-calibrated model contains a robust region of parameter space satisfying the lifecycle targets.",
+    "The region persists under plausible uncertainty in transport, crosslink kinetics, temperature, ionic conditions, and mechanical loading.",
+    "At least two mechanistically distinct material architectures survive virtual falsification before physical validation."
+  ],
+  "falsifiers": [
+    "No physically plausible parameter region separates the useful wet lifetime from subsequent disintegration.",
+    "Desired behaviour exists only at brittle, implausibly precise parameter combinations.",
+    "The mechanism depends on constituents incompatible with the bio-derived/non-persistent design constraints."
+  ],
+  "notes": "CleanCoin is the motivating application; the hypothesis concerns time-programmed wet mechanical lifetime rather than a specific product geometry."
+}
