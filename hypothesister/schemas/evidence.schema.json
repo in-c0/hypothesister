@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://hypothesister.local/schema/evidence.json",
+  "title": "Hypothesister Evidence",
+  "type": "object",
+  "required": ["id", "kind", "claim", "source", "provenance", "confidence"],
+  "properties": {
+    "id": {"type": "string"},
+    "kind": {"enum": ["literature", "simulation", "measurement", "derived", "assumption"]},
+    "claim": {"type": "string"},
+    "source": {"type": "string"},
+    "provenance": {"type": "string"},
+    "confidence": {"type": "number", "minimum": 0, "maximum": 1},
+    "limitations": {"type": "array", "items": {"type": "string"}}
+  },
+  "additionalProperties": false
+}
