@@ -1,0 +1,13 @@
+observation_id,source_doi,alginate,alginate_concentration_mg_ml,g_fraction_pct,calcium_mM,equilibrium_scale_mg,k_min_inv_mg_inv,regime,status,transfer_warning
+DPB2010-HF120-12p5,10.1016/j.carbpol.2009.10.036,HF120RBS,5,45-55,12.5,120.48,0.0013,swelling,CONTEXT_KINETIC_PRIOR,"Internal CaCO3/GDL gelation; low alginate concentration; tablet in 50 mL DD water; not A01 geometry"
+DPB2010-HF120-15,10.1016/j.carbpol.2009.10.036,HF120RBS,5,45-55,15,111.11,0.0010,swelling,CONTEXT_KINETIC_PRIOR,"Internal CaCO3/GDL gelation; low alginate concentration; tablet in 50 mL DD water; not A01 geometry"
+DPB2010-HF120-20,10.1016/j.carbpol.2009.10.036,HF120RBS,5,45-55,20,92.59,0.0024,swelling_or_near_transition,CONTEXT_KINETIC_PRIOR,"Source reports non-monotonic kinetics; do not interpolate k blindly across calcium"
+DPB2010-HF120-25,10.1016/j.carbpol.2009.10.036,HF120RBS,5,45-55,25,82.64,0.0200,swelling_or_near_transition,SOURCE_OUTLIER_CONTEXT,"Local/non-monotonic behavior; preserve source value but do not use as universal rate"
+DPB2010-HF120-30,10.1016/j.carbpol.2009.10.036,HF120RBS,5,45-55,30,73.53,-0.0055,syneresis,DO_NOT_USE_AS_SWELLING_RATE,"Negative fitted constant denotes de-swelling regime; reduced positive swelling model is inapplicable"
+DPB2010-HF120-40,10.1016/j.carbpol.2009.10.036,HF120RBS,5,45-55,40,66.23,-0.0028,syneresis,DO_NOT_USE_AS_SWELLING_RATE,"Negative fitted constant denotes de-swelling regime; reduced positive swelling model is inapplicable"
+DPB2010-LF240D-12p5,10.1016/j.carbpol.2009.10.036,LF240D,5,30-35,12.5,99.01,0.3692,swelling,SOURCE_ANOMALOUS_CONTEXT,"Closest G fraction to A1112-like A01 but source k is exceptionally large; retain exactly and verify before calibration"
+DPB2010-LF240D-15,10.1016/j.carbpol.2009.10.036,LF240D,5,30-35,15,91.74,0.0017,swelling,CONTEXT_KINETIC_PRIOR,"Closest G fraction to A01; internal-gelation/tablet conditions differ strongly"
+DPB2010-LF240D-20,10.1016/j.carbpol.2009.10.036,LF240D,5,30-35,20,70.92,-0.0525,syneresis,DO_NOT_USE_AS_SWELLING_RATE,"Negative fitted constant denotes de-swelling regime"
+DPB2010-LF240D-25,10.1016/j.carbpol.2009.10.036,LF240D,5,30-35,25,67.57,-0.0039,syneresis,DO_NOT_USE_AS_SWELLING_RATE,"Negative fitted constant denotes de-swelling regime"
+DPB2010-LF240D-30,10.1016/j.carbpol.2009.10.036,LF240D,5,30-35,30,60.98,-0.0024,syneresis,DO_NOT_USE_AS_SWELLING_RATE,"Negative fitted constant denotes de-swelling regime"
+DPB2010-LF240D-40,10.1016/j.carbpol.2009.10.036,LF240D,5,30-35,40,56.82,-0.0018,syneresis,DO_NOT_USE_AS_SWELLING_RATE,"Negative fitted constant denotes de-swelling regime"
