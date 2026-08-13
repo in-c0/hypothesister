@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://hypothesister.local/schema/experiment.json",
+  "title": "Hypothesister Experiment",
+  "type": "object",
+  "required": ["id", "hypothesis_id", "method", "inputs", "outputs", "reproducibility"],
+  "properties": {
+    "id": {"type": "string"},
+    "hypothesis_id": {"type": "string"},
+    "method": {"type": "string"},
+    "inputs": {"type": "object"},
+    "outputs": {"type": "object"},
+    "reproducibility": {
+      "type": "object",
+      "required": ["code_ref", "environment"],
+      "properties": {
+        "code_ref": {"type": "string"},
+        "environment": {"type": "string"},
+        "seed": {"type": ["integer", "null"]}
+      }
+    }
+  }
+}
