@@ -1,6 +1,16 @@
 parameter,symbol,value,unit,status,source,notes
-water_diffusivity,D,,,UNSET,,Must be literature-derived or computed for each material system
-hydration_crosslink_rate,k_h,,,UNSET,,Rate of water-enabled sacrificial-link loss
-mechanical_damage_rate,k_m,,,UNSET,,Effective rate under standardized cyclic loading
-permanent_network_fraction,p_perm,,,UNSET,,Non-sacrificial cohesion fraction
-initial_sacrificial_fraction,s0,,,UNSET,,Normalized initial sacrificial network state
+water_diffusivity,D,,,LEGACY_UNSET,,Legacy v0 hydration parameter; superseded for A01 by water_diffusivity_a01
+hydration_crosslink_rate,k_h,,,SUPERSEDED_A01,,Do not calibrate A01 with a single external-Ca release rate
+mechanical_damage_rate,k_m,,,UNSET,,Effective rate under standardized cyclic loading; deferred until RQ-003
+permanent_network_fraction,p_perm,,,UNSET,,Legacy v0 cohesion parameter
+initial_sacrificial_fraction,s0,,,UNSET,,Legacy v0 sacrificial-network parameter
+water_diffusivity_a01,D_w,,,UNSET,,Hydration transport in A01; high sensitivity in v0.1 structural sensitivity analysis
+mobile_ca_diffusivity,D_ca,,,UNSET,,Mobile Ca2+ transport through hydrated A01; high sensitivity in v0.1
+initial_temporary_ca_inventory,C_t0,,,UNSET,,Load-bearing temporary-junction Ca2+ concentration/inventory; high sensitivity and required to normalize external release data
+initial_strong_ca_inventory,C_s0,,,UNSET,,Strong/chelate-junction Ca2+ concentration/inventory
+initial_temporary_dissociation_rate,k_t,,,UNSET,,Temporary-junction dissociation rate; high sensitivity at 30-min horizon
+strong_dissociation_rate,k_s,,,UNSET,,Strong-junction dissociation rate after activation; low sensitivity before activation but required for collapse phase
+strong_activation_bound_fraction,B_crit,,,UNSET,,Connectivity/weakening threshold at which strong-junction loss accelerates
+strong_activation_width,w_B,,,UNSET,,Smoothness of strong-junction activation; numerical reduced-model parameter pending mechanistic justification
+bath_volume,V_bath,,,SOURCE_SPECIFIC,,Needed to convert released Ca2+ moles to external concentration; must match each calibration experiment
+characteristic_thickness,L,,,SOURCE_SPECIFIC,,Diffusion length/geometry; high sensitivity and must match each calibration experiment
