@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://hypothesister.local/schema/result.json",
+  "title": "Hypothesister Result",
+  "type": "object",
+  "required": ["experiment_id", "outcome", "supports_hypothesis", "limitations"],
+  "properties": {
+    "experiment_id": {"type": "string"},
+    "outcome": {"type": "object"},
+    "supports_hypothesis": {"type": ["boolean", "null"]},
+    "limitations": {"type": "array", "items": {"type": "string"}},
+    "next_action": {"type": "string"}
+  }
+}
