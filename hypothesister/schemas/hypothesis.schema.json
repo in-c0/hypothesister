@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://hypothesister.local/schema/hypothesis.json",
+  "title": "Hypothesister Hypothesis",
+  "type": "object",
+  "required": ["id", "statement", "status", "success_criteria", "falsifiers"],
+  "properties": {
+    "id": {"type": "string"},
+    "statement": {"type": "string"},
+    "status": {"enum": ["proposed", "testing", "supported", "rejected", "inconclusive"]},
+    "success_criteria": {"type": "array", "items": {"type": "string"}},
+    "falsifiers": {"type": "array", "items": {"type": "string"}},
+    "notes": {"type": "string"}
+  },
+  "additionalProperties": false
+}
