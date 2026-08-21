@@ -30,11 +30,12 @@ pytest
 
 ## Current layers
 
-- `hypothesister/schemas/` — hypothesis/evidence/experiment/result contracts.
+- `hypothesister/schemas/` — hypothesis/evidence/experiment/result contracts, plus the generic invention-candidate contract.
 - `projects/HYP-001-cleancoin/` — project-specific scientific protocol.
 - `src/cleancoin_lab/model.py` — 1-D hydration + sacrificial-crosslink model.
 - `src/cleancoin_lab/screen.py` — uncertainty-aware parameter screening.
 - `docs/VIRTUAL_LAB_V0.md` — stage gate and next implementation sequence.
+- `docs/INVENTION_MODE_V0.md` — bounded problem → mechanism → falsification → prior-art triage workflow for technical invention discovery.
 
 ## Planned simulator hierarchy
 

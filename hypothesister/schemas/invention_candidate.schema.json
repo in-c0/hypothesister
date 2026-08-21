@@ -1,0 +1,95 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://hypothesister.local/schema/invention_candidate.json",
+  "title": "Hypothesister Invention Candidate",
+  "type": "object",
+  "required": [
+    "id",
+    "problem",
+    "mechanism",
+    "novelty_hypothesis",
+    "status",
+    "predictions",
+    "falsifiers",
+    "experiment",
+    "scores",
+    "prior_art_refs",
+    "next_gate"
+  ],
+  "properties": {
+    "id": {"type": "string"},
+    "problem": {"type": "string"},
+    "mechanism": {"type": "string"},
+    "novelty_hypothesis": {"type": "string"},
+    "status": {
+      "enum": [
+        "proposed",
+        "testing",
+        "survived_experiment",
+        "rejected_experiment",
+        "prior_art_blocked",
+        "prior_art_unclear",
+        "ready_for_ip_review"
+      ]
+    },
+    "predictions": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"type": "string"}
+    },
+    "falsifiers": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"type": "string"}
+    },
+    "experiment": {
+      "type": "object",
+      "required": ["description", "measurements", "cost_class"],
+      "properties": {
+        "description": {"type": "string"},
+        "measurements": {
+          "type": "array",
+          "items": {"type": "string"}
+        },
+        "cost_class": {"enum": ["desk", "prototype", "lab", "external"]}
+      },
+      "additionalProperties": false
+    },
+    "scores": {
+      "type": "object",
+      "required": [
+        "technical_novelty",
+        "utility",
+        "non_obviousness",
+        "testability",
+        "enablement",
+        "ip_whitespace"
+      ],
+      "properties": {
+        "technical_novelty": {"type": "integer", "minimum": 0, "maximum": 5},
+        "utility": {"type": "integer", "minimum": 0, "maximum": 5},
+        "non_obviousness": {"type": "integer", "minimum": 0, "maximum": 5},
+        "testability": {"type": "integer", "minimum": 0, "maximum": 5},
+        "enablement": {"type": "integer", "minimum": 0, "maximum": 5},
+        "ip_whitespace": {"type": "integer", "minimum": 0, "maximum": 5}
+      },
+      "additionalProperties": false
+    },
+    "prior_art_refs": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["reference", "relationship"],
+        "properties": {
+          "reference": {"type": "string"},
+          "relationship": {"enum": ["blocking", "adjacent", "background", "unknown"]},
+          "notes": {"type": "string"}
+        },
+        "additionalProperties": false
+      }
+    },
+    "enablement_notes": {"type": "string"},
+    "next_gate": {"type": "string"}
+  },
+  "additionalProperties": false
+}
